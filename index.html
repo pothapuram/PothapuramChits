@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets CRUD Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Google Sheets CRUD Manager</h1>
+            <button id="authButton" class="btn btn-primary">Authorize</button>
+            <button id="signoutButton" class="btn btn-secondary" style="display:none;">Sign Out</button>
+        </header>
+
+        <!-- Navigation Bar for Sheets -->
+        <nav id="sheetNav" class="sheet-nav">
+            <!-- Sheet tabs will be dynamically added here -->
+        </nav>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="addRowBtn" class="btn btn-success">Add New Row</button>
+            <button id="refreshBtn" class="btn btn-info">Refresh Data</button>
+        </div>
+
+        <!-- Data Table Container -->
+        <div id="tableContainer" class="table-container">
+            <div id="loadingMessage" class="loading">Loading data...</div>
+            <table id="dataTable" class="data-table" style="display:none;">
+                <thead id="tableHead">
+                    <!-- Table headers will be dynamically generated -->
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Table rows will be dynamically generated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Row</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="dataForm">
+                    <div id="formFields">
+                        <!-- Form fields will be dynamically generated -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google API Client Library -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+    
+    <!-- Application Scripts -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
